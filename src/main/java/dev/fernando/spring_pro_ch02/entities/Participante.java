@@ -11,10 +11,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_participante")
 public class Participante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +22,7 @@ public class Participante {
 
     @ManyToMany
     @JoinTable(
-        name = "tb_participante_atividade",
+        name = "Participante_Atividade",
         joinColumns = @JoinColumn(name = "participante_id"),
         inverseJoinColumns = @JoinColumn(name = "atividade_id")
     )
